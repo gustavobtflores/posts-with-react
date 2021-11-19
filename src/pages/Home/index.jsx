@@ -6,11 +6,17 @@ import { useState, useEffect } from "react";
 import { loadPosts } from "../../utils/loadPosts";
 import { Button } from "../../components/Button";
 
+import styled from "styled-components";
+
+const PostsContainer = styled.section`
+  padding: 16px;
+`;
+
 function Home() {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
-  const postsPerPage = 4;
+  const postsPerPage = 10;
 
   useEffect(() => {
     const loadData = async () => {
@@ -31,15 +37,20 @@ function Home() {
   };
 
   return (
-    <>
+    <PostsContainer>
+      <input type="text" />
+      <br />
+      <br />
+
       <PostCard posts={posts} />
       <Button
         text="Load more posts"
         onClick={() => {
           loadMorePosts();
         }}
+        disabled={posts.length === allPosts.length}
       />
-    </>
+    </PostsContainer>
   );
 }
 

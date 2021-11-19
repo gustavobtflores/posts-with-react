@@ -4,7 +4,6 @@ const PostsWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;
-  margin: 16px;
 `;
 
 const Post = styled.div`
