@@ -10,6 +10,7 @@ const ButtonMorePosts = styled.button`
   border-radius: 4px;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.75);
   margin-bottom: 16px;
+  margin-top: 16px;
 
   &:disabled {
     background-color: #888;
