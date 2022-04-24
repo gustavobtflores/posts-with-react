@@ -2,23 +2,23 @@
 
 exports[`<PostCard /> should match snapshot 1`] = `
 <div
-  class="sc-bdvvtL bhnaXZ"
+  class="sc-bczRLJ ixKPMO"
 >
   <div
-    class="sc-gsDKAQ eJoXKi"
+    class="sc-gsnTZi eQKhJm"
   >
     <img
       alt="title1"
-      class="sc-eCImPb hAFFpl"
+      class="sc-eCYdqJ gNiPgP"
       src="img/img.png"
     />
     <h2
-      class="sc-dkPtRN jIvutR"
+      class="sc-dkzDqf lhODJe"
     >
       title1
     </h2>
     <p
-      class="sc-hKwDye"
+      class="sc-hKMtZM"
     >
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>

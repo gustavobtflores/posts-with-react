@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
-const TextInput = ({ searchValue, handleChange }) => {
-  <StyledTextInput type="search" value={searchValue} onChange={handleChange} placeholder="Type your search" />;
-};
+function TextInput({ searchValue, handleChange }) {
+  return (
+    <StyledTextInput
+      type="search"
+      value={searchValue}
+      onChange={handleChange}
+      placeholder="Type your search"
+    />
+  );
+}
 
 const StyledTextInput = styled.input`
   width: 100%;

@@ -2,7 +2,7 @@
 
 exports[`<Button /> should match snapshot 1`] = `
 <button
-  class="sc-bdvvtL eykEeU"
+  class="sc-bczRLJ hZmcDf"
   disabled=""
 >
   Load more posts

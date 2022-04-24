@@ -1,21 +1,20 @@
-import axios from "axios";
+import axios from 'axios';
 
-export const loadPosts = async () => {
+const loadPosts = async () => {
   const postsResponse = await axios
-    .get("https://jsonplaceholder.typicode.com/posts")
-    .then((res) => {
-      return res.data;
-    });
+    .get('https://jsonplaceholder.typicode.com/posts')
+    .then((res) => res.data);
 
   const photosResponse = await axios
-    .get("https://jsonplaceholder.typicode.com/photos")
-    .then((res) => {
-      return res.data;
-    });
+    .get('https://jsonplaceholder.typicode.com/photos')
+    .then((res) => res.data);
 
-  const postsAndPhotos = postsResponse.map((post, index) => {
-    return { ...post, cover: photosResponse[index].url };
-  });
+  const postsAndPhotos = postsResponse.map((post, index) => ({
+    ...post,
+    cover: photosResponse[index].url,
+  }));
 
   return postsAndPhotos;
 };
+
+export default loadPosts;

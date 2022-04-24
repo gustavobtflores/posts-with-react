@@ -18,10 +18,12 @@ const ButtonMorePosts = styled.button`
   }
 `;
 
-const Button = ({ text, onClick, disabled }) => {
-  <ButtonMorePosts disabled={disabled} onClick={onClick}>
-    {text}
-  </ButtonMorePosts>;
-};
+function Button({ text, onClick, disabled }) {
+  return (
+    <ButtonMorePosts disabled={disabled} onClick={onClick}>
+      {text}
+    </ButtonMorePosts>
+  );
+}
 
 export default Button;
