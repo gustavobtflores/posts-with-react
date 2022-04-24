@@ -28,16 +28,18 @@ const PostCover = styled.img`
   max-width: 100%;
 `;
 
-const PostCard = ({ posts }) => {
-  <PostsWrapper>
-    {posts.map((post) => (
-      <Post key={post.id}>
-        <PostCover src={post.cover} alt={post.title} />
-        <PostTitle>{post.title}</PostTitle>
-        <PostBody>{post.body}</PostBody>
-      </Post>
-    ))}
-  </PostsWrapper>;
-};
+function PostCard({ posts }) {
+  return (
+    <PostsWrapper>
+      {posts.map((post) => (
+        <Post key={post.id}>
+          <PostCover src={post.cover} alt={post.title} />
+          <PostTitle>{post.title}</PostTitle>
+          <PostBody>{post.body}</PostBody>
+        </Post>
+      ))}
+    </PostsWrapper>
+  );
+}
 
 export default PostCard;

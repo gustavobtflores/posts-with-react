@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import PostCard from '../../components/PostCard';
 
-import { loadPosts } from '../../utils/loadPosts';
+import loadPosts from '../../utils/loadPosts';
 import Button from '../../components/Button';
 
 import TextInput from '../../components/TextInput';
@@ -23,7 +23,7 @@ function Home() {
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
   const [searchValue, setSearchValue] = useState('');
-  const postsPerPage = 10;
+  const postsPerPage = 2;
   const filteredPosts = searchValue
     ? allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
     : posts;
