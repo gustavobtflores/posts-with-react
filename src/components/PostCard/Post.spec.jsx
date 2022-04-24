@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { PostCard } from '.';
+import PostCard from '.';
 import mock from './mock';
 
 describe('<PostCard />', () => {
@@ -10,9 +10,7 @@ describe('<PostCard />', () => {
 
     expect(screen.getByRole('heading', { name: mock.title })).toBeInTheDocument();
 
-    expect(
-      screen.getByText('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')
-    ).toBeInTheDocument();
+    expect(screen.getByText('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')).toBeInTheDocument();
   });
 
   it('should match snapshot', () => {

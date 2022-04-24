@@ -1,13 +1,13 @@
-import "./reset.css";
+import './reset.css';
 
-import { PostCard } from "../../components/PostCard";
+import { useState, useEffect } from 'react';
+import styled from 'styled-components';
+import PostCard from '../../components/PostCard';
 
-import { useState, useEffect } from "react";
-import { loadPosts } from "../../utils/loadPosts";
-import { Button } from "../../components/Button";
+import { loadPosts } from '../../utils/loadPosts';
+import Button from '../../components/Button';
 
-import styled from "styled-components";
-import { TextInput } from "../../components/TextInput";
+import TextInput from '../../components/TextInput';
 
 const PostsContainer = styled.section`
   padding: 16px;
@@ -22,12 +22,10 @@ function Home() {
   const [posts, setPosts] = useState([]);
   const [allPosts, setAllPosts] = useState([]);
   const [page, setPage] = useState(0);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const postsPerPage = 10;
-  const filteredPosts = !!searchValue
-    ? allPosts.filter((post) => {
-        return post.title.toLowerCase().includes(searchValue.toLowerCase());
-      })
+  const filteredPosts = searchValue
+    ? allPosts.filter((post) => post.title.toLowerCase().includes(searchValue.toLowerCase()))
     : posts;
 
   useEffect(() => {
@@ -44,7 +42,7 @@ function Home() {
     const nextPage = page + postsPerPage;
     const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
 
-    setPosts((posts) => [...posts, ...nextPosts]);
+    setPosts((prevPosts) => [...prevPosts, ...nextPosts]);
     setPage(nextPage);
   };
 
@@ -55,7 +53,12 @@ function Home() {
 
   return (
     <PostsContainer>
-      {!!searchValue && <h1>Search value: {searchValue}</h1>}
+      {!!searchValue && (
+        <h1>
+          Search value:
+          {searchValue}
+        </h1>
+      )}
       <TextInput searchValue={searchValue} handleChange={handleSearchInput} />
       <br />
       <br />

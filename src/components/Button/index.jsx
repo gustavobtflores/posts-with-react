@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ButtonMorePosts = styled.button`
   background-color: #05eb24;
@@ -18,10 +18,10 @@ const ButtonMorePosts = styled.button`
   }
 `;
 
-export const Button = ({ text, onClick, disabled }) => {
-  return (
-    <ButtonMorePosts disabled={disabled} onClick={onClick}>
-      {text}
-    </ButtonMorePosts>
-  );
+const Button = ({ text, onClick, disabled }) => {
+  <ButtonMorePosts disabled={disabled} onClick={onClick}>
+    {text}
+  </ButtonMorePosts>;
 };
+
+export default Button;
