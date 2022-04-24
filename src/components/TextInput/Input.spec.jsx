@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { TextInput } from '.';
+import TextInput from '.';
 
 describe('<TextInput />', () => {
   it('should have a value of searchValue', () => {
     const fn = jest.fn();
-    render(<TextInput handleChange={fn} searchValue={'testing'} />);
+    render(<TextInput handleChange={fn} searchValue="testing" />);
 
     const input = screen.getByPlaceholderText(/type your search/i);
 
